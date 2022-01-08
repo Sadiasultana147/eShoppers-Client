@@ -2,10 +2,10 @@ import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import NotFound from "./Components/NotFound/NotFound";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import AddCategory from "./Components/AddComponents/AddCategory/AddCategory";
 import Electronics from "./Components/AllList/ElectronicsCategory/Electronics";
-import Sports from './Components/AllList/SportsCategory/Sports';
+import Sports from "./Components/AllList/SportsCategory/Sports";
 import Categories from "./Components/AllList/Categories/Categories";
 
 import AddElectronic from "./Components/AddComponents/AddElectronic/AddElectronic";
@@ -13,9 +13,9 @@ import AddSport from "./Components/AddComponents/AddSport/AddSport";
 import AddFurniture from "./Components/AddComponents/AddFurniture/AddFurniture";
 import Furnitures from "./Components/AllList/Furnitures/Furnitures";
 import AddFashion from "./Components/AddComponents/AddFashion/AddFashion";
-import Fashions from './Components/AllList/Fashions/Fashions'
+import Fashions from "./Components/AllList/Fashions/Fashions";
 import AddCosmetic from "./Components/AddComponents/AddCosmetic/AddCosmetic";
-import Cosmetics from './Components/AllList/Cosmetics/Cosmetics'
+import Cosmetics from "./Components/AllList/Cosmetics/Cosmetics";
 import ElectronicDetails from "./Components/AllDetails/ElectronicDetails/ElectronicDetails";
 import SportDetails from "./Components/AllDetails/SportDetails/SportDetails";
 import FurnitureDetails from "./Components/AllDetails/FurnitureDetails/FurnitureDetails";
@@ -26,7 +26,6 @@ import ElectricOrders from "./Components/AllOrders/ElectricOrders/ElectricOrders
 import MyOrders from "./Components/AllOrders/MyOrders/MyOrders";
 import Home from "./Components/Home/Home";
 import AuthProvider from "./Context/AuthProvider";
-import Shop from "./Components/Shop/Shop";
 import CustomerCare from "./Components/CustomerCare/CustomerCare";
 import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
@@ -36,23 +35,27 @@ import SportsOrder from "./Components/AllOrders/SportsOrder/SportOrders";
 import FashionOrders from "./Components/AllOrders/FashionOrders/FashionOrders";
 import FurnitureOrders from "./Components/AllOrders/FurnitureOrders/FurnitureOrders";
 import CosmeticOrders from "./Components/AllOrders/CosmeticsOrders/CosmeticOrders";
+<<<<<<< HEAD
 import ManageOrders from "./Components/AllOrders/ManageOrders/ManageOrders"
 import SearchBar from "./Components/SearchBar/SearchBar";
 import SearchProducts from "./Components/SearchBar/SearchProducts";
 import Result from "./Components/SearchBar/Result";
 
 
+=======
+import ManageOrders from "./Components/AllOrders/ManageOrders/ManageOrders";
+// import SearchResult from "./Components/SearchResult/SearchResult";
+>>>>>>> e5af33e43b93f3daa293a1bff3d589b3ea2270c7
 
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
         <Switch>
-
-          <Route exact path='/'>
+          <Route exact path="/">
             <Home></Home>
           </Route>
-          <Route exact path='/home'>
+          <Route exact path="/home">
             <Home></Home>
           </Route>
           <Route path="/addcategory">
@@ -64,7 +67,7 @@ function App() {
           <Route path="/cosmetics">
             <Cosmetics></Cosmetics>
           </Route>
-          <Route path="/categories">
+          <Route path="/shop">
             <Categories></Categories>
           </Route>
           <Route path="/electronics">
@@ -108,9 +111,9 @@ function App() {
             <MyOrders></MyOrders>
           </Route>
 
-          <Route exact path="/shop">
+          {/* <Route exact path="/shop">
             <Shop></Shop>
-          </Route>
+          </Route> */}
           <Route path="/allproducts">
             <AllProducts></AllProducts>
           </Route>
@@ -158,7 +161,9 @@ function App() {
           <Route path="/furnitureOrder/:_id">
             <FurnitureOrders></FurnitureOrders>
           </Route>
-
+          {/* <Route path="/searchResult">
+            <SearchResult></SearchResult>
+          </Route> */}
 
           <Route path="*">
             <NotFound></NotFound>
