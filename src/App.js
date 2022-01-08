@@ -37,6 +37,11 @@ import FashionOrders from "./Components/AllOrders/FashionOrders/FashionOrders";
 import FurnitureOrders from "./Components/AllOrders/FurnitureOrders/FurnitureOrders";
 import CosmeticOrders from "./Components/AllOrders/CosmeticsOrders/CosmeticOrders";
 import ManageOrders from "./Components/AllOrders/ManageOrders/ManageOrders"
+import SearchBar from "./Components/SearchBar/SearchBar";
+import SearchProducts from "./Components/SearchBar/SearchProducts";
+import Result from "./Components/SearchBar/Result";
+
+
 
 function App() {
   return (
@@ -68,11 +73,21 @@ function App() {
           <Route path="/sports">
             <Sports></Sports>
           </Route>
+
+          <Route path="/searchResult">
+            <SearchProducts></SearchProducts>
+          </Route>
+          <Route path="/r">
+            <Result></Result>
+          </Route>
           <Route path="/furnitures">
             <Furnitures></Furnitures>
           </Route>
           <Route path="/fashions">
             <Fashions></Fashions>
+          </Route>
+          <Route path="/searchbar">
+            <SearchBar></SearchBar>
           </Route>
           <Route path="/addElectronic">
             <AddElectronic></AddElectronic>

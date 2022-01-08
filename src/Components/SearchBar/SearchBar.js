@@ -3,55 +3,65 @@ import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import FavoriteBorderSharpIcon from "@material-ui/icons/FavoriteBorderSharp";
 import "./SearchBar.css";
-import { Container } from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
+
+import { Link } from "react-router-dom";
+import SearchProducts from "./SearchProducts";
+import { useHistory, useLocation } from 'react-router';
+import useAuth from "../../Hook/useAuth";
 
 const SearchBar = () => {
   const [APIData, setAPIData] = useState([]);
-  const [searchInput, setSearchInput] = useState("");
-  const [filteredResults, setFilteredResults] = useState([]);
+  // const [searchText, setSearchText] = useState('');
+  const [name, setName] = useState([])
+  const { searchText, setSearchText } = useAuth();
 
-  useEffect(() => {
-    fetch("./fakeData.json")
-      .then((res) => res.json())
-      .then((data) => setAPIData(data));
-  }, []);
 
-  const searchItems = (searchValue) => {
-    setSearchInput(searchInput);
 
-    if (searchInput !== "") {
-      const filteredData = APIData.filter((item) => {
-        return Object.values(item)
-          .join("")
-          .toLowerCase()
-          .includes(searchInput.toLowerCase());
-      });
-      setFilteredResults(filteredData);
-    } else {
-      setFilteredResults(APIData);
-    }
-  };
+  const handleButton = (e) => {
+    const searchTextValue = e.target.value;
+    setSearchText(searchTextValue)
+    console.log(searchText);
+
+    //searchText=searchTextValue
+
+  }
+
+
+
+
+
+
+
   return (
     <div className="search-field">
+
       <Container className="search-container">
         <h2 className="search-heading" style={{ color: "salmon" }}>
           Aurora
         </h2>
+
         <div className="search mx-auto">
           <form className="searchInputs">
-            <input
-              placeholder="Search in Aurora...."
-              onChange={(e) => searchItems(e.target.value)}
-            />
-            <button
-              style={{
-                border: "none",
-                backgroundColor: "white",
-                color: "tomato",
-              }}
-            >
-              <SearchIcon />
-            </button>
+            <input onChange={handleButton} placeholder="Search in Aurora...." />
+
+
+
+            <Link to='/searchResult' >
+              <button
+                style={{
+                  border: "none",
+                  backgroundColor: "white",
+                  color: "tomato",
+                }}
+
+              >
+
+                <SearchIcon />
+
+              </button>
+            </Link>
+
           </form>
         </div>
         <div>

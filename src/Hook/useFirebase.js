@@ -14,6 +14,7 @@ import initializeAuthentication from "../Firebase/firebase.init";
 initializeAuthentication();
 
 const useFirebase = () => {
+  const [searchText, setSearchText] = useState('');
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [isAdmin, setIsAdmin] = useState('');
@@ -97,7 +98,8 @@ const useFirebase = () => {
     updateName,
     hanldeUserInfoRegister,
     isAdmin,
-    setIsAdmin
+    setIsAdmin,
+    searchText, setSearchText
   };
 };
 

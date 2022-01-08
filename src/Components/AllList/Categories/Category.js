@@ -23,13 +23,13 @@ const Category = (props) => {
             console.log("Sport")
         }
 
-        else if (name == "Furnitures") {
+        else if (name == "Furniture") {
 
             const url3 = "/furnitures"
             history.push(url3)
 
         }
-        else if (name == "Fashions") {
+        else if (name == "Fashion") {
 
             const url4 = "/fashions"
             history.push(url4)
