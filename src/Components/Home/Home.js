@@ -3,9 +3,8 @@ import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Navigation from "../Navigation/Navigation";
 import SearchBar from "../SearchBar/SearchBar";
-import Shop from "../Shop/Shop";
 import Slider from "../Slider/Slider";
-import Categories from "../AllList/Categories/Categories"
+import Categories from "../AllList/Categories/Categories";
 
 const Home = () => {
   const [highlights, setHighlights] = useState([]);
@@ -37,7 +36,6 @@ const Home = () => {
           ))}
         </Row>
       </Container>
-      <Shop></Shop>
       <Categories></Categories>
     </div>
   );
